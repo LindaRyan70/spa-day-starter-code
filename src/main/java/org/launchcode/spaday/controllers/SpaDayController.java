@@ -30,7 +30,7 @@ public class SpaDayController {
         String html = "<form method = 'post'>" +
                 "Name: <br>" +
                 "<input type = 'text' name = 'name'>" +
-                "<br>Skin type: <br>" +
+                "<br>Skin Type: <br>" +
                 "<select name = 'skintype'>" +
                 "<option value = 'oily'>Oily</option>" +
                 "<option value = 'combination'>Combination</option>" +
@@ -62,6 +62,15 @@ public class SpaDayController {
                 appropriateFacials.add(facials.get(i));
             }
         }
+
+        //  Studio 13.11.2 The Customer Profile - Add data into the model for menu.html to display it.//
+        model.addAttribute("name", name);
+        model.addAttribute("skintype", skintype);
+        model.addAttribute("manipedi", manipedi);
+
+        //  Studio 13.11.3 List All Appropriate Facial Treatments - Add data into the model for menu.html to display it.//
+//        model.addAttribute("facials", facials);   // This did not seem to make any difference. So commented it off.
+        model.addAttribute("appropriateFacials", appropriateFacials);
 
         return "menu";
     }
