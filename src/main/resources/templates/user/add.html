@@ -3,33 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
-    <title>Sign Up</title>
+    <title>User Log-In</title>
 </head>
 <body>
     <form method = 'post' th:action="@{/user}">
-        <label>
-            Username:
-            <input type = 'text' name = 'username' th:value="${username}">
-        </label>
-
-        <label>
-            Email:
-            <input type = 'email' name = 'email' th:value="${email}">
-        </label>
-
-        <label>
-            Password:
-            <input type = 'password' name = 'password'>
-        </label>
-
-        <label>
-            Verify Password:
-            <input type = 'password' name = 'verify'>
-        </label>
-
-        <p th:text="${error}"></p>
-
-        <input type = 'submit' value = 'Sign Up'>
+        <div class="form-group">
+            <label>
+                Username:
+                <input type="text" th:field="${user.username}">
+                <p class="error" th:errors="${user.username}"></p>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Email:
+                <input th:field="${user.email}">
+                <p class="error" th:errors="${user.email}"></p>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Password:
+                <input type = 'password' th:field="${user.password}">
+                <p class="error" th:errors="${user.password}"></p>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Verify Password:
+                <input type = 'password' th:field="${user.verifyPassword}">
+                <p class="error" th:errors="${user.verifyPassword}"></p>
+            </label>
+        </div>
+        <div>
+<!--            <p th:text="${error}"></p>-->
+<!--            <p th:if="${error}" th:text="${error}">Error</p>-->
+            <input type = 'submit' value = 'Sign Up'>
+        </div>
     </form>
 
 </body>

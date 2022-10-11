@@ -6,9 +6,12 @@
     <title>Welcome</title>
 </head>
 <body>
-    <p th:text = "'Welcome ' + ${user.username} + '!'"></p>
-    <a th:href="@{/}">
-        Select your spa services here
-    </a>
+<h1 th:text = "'Welcome ' + ${user.username} + '!'"></h1>
+    <div>
+        <a th:href="@{/}">
+            Select Your Spa Services Here...
+        </a>
+    </div>
+
 </body>
 </html>
